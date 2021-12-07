@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Users</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/shards.min.css">
+</head>
+<tbody>
+<tr th:each="person : ${persons}">
+    <td th:text="${person.id}"></td>
+    <td th:text="${person.name}"></td>
+    <td th:text="${person.age}"></td>
+<!--    <td>-->
+<!--        <form th:action="@{delete_person}" method="post" th:object="${person}">-->
+<!--            <input type="hidden" th:field="${person.id}"/>-->
+<!--            <button type="submit" value="Submit" class="btn btn-danger">Delete</button>-->
+<!--        </form>-->
+<!--    </td>-->
+</tr>
+<h1>View Person</h1>
+<a th:href="@{/all}">Back to Person List</a>
+</tbody>

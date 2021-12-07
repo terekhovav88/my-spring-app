@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>View Person</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<h1>View Person</h1>
+<a th:href="@{/all}">Back to Person List</a>
+<br/><br/>
+<div th:if="${person}">
+  <table border="0">
+    <tr>
+      <td>id</td>
+      <td>:</td>
+      <td th:utext="${person.id}">...</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>:</td>
+      <td th:utext="${person.name}">...</td>
+    </tr>
+    <tr>
+      <td>age</td>
+      <td>:</td>
+      <td th:utext="${person.age}">...</td>
+    </tr>
+  </table>
+<!--  <br/><br/>-->
+<!--  <div th:if="not ${allowDelete}">-->
+<!--    <a th:href="@{/person/{personId}/edit(personId=${person.id})}">Edit</a> |-->
+<!--    <a th:href="@{/person/{personId}/delete(personId=${person.id})}">Delete</a>-->
+<!--  </div>-->
+<!--  <form th:if="${allowDelete}" th:action="@{/person/{personId}/delete(personId=${person.id})}" method="POST">-->
+<!--    Delete this contact? <input type="submit" th:value="Yes" />-->
+<!--  </form>-->
+</div>
+<div th:if="${errorMessage}" th:utext="${errorMessage}" class="error"></div>
+</body>
+</html>
